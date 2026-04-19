@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --color-clean-bg: #000000;
+  --color-clean-card: #121212;
+  --color-clean-text: #ffffff;
+  --color-clean-muted: #8e8e93;
+  --color-clean-accent: #007aff;
+  --color-clean-border: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-clean-bg text-clean-text antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-clean-text;
+  }
+}
+
+.clean-card {
+  @apply bg-clean-card border border-clean-border shadow-[0_4px_20px_rgba(0,0,0,0.5)];
+}
+
+.clean-sidebar {
+  @apply w-[260px] h-full border-r border-clean-border bg-clean-card flex flex-col p-6;
+}
+
+.clean-input {
+  @apply bg-clean-card border border-clean-border rounded-2xl px-6 py-4 shadow-[0_4px_20px_rgba(0,0,0,0.5)] focus:outline-none transition-all;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+}
